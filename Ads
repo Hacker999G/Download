@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GigaPub Ad Test</title>
+
+  <!-- Giga.pub Script -->
+  <script src="https://ad.gigapub.tech/script?id=1440"></script>
+
+  <!-- Simple styling -->
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background: #00c853;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #009624;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>🔁 Giga.pub Ad Test</h2>
+  <button onclick="showTestAd()">▶ Show Ad</button>
+
+  <script>
+    function showTestAd() {
+      if (typeof window.showGiga === "function") {
+        window.showGiga()
+          .then(() => {
+            alert("✅ Ad shown successfully!");
+          })
+          .catch(err => {
+            alert("❌ Error showing ad: " + err);
+            console.error(err);
+          });
+      } else {
+        alert("🚫 Giga Ad not loaded properly. Try again later.");
+      }
+    }
+  </script>
+</body>
+</html>
